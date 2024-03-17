@@ -1,12 +1,25 @@
 public class Coffee {
     private int numCups;
+    private int amountWater;
+    private int amountMilk;
+    private int amountBean;
 
-    public Coffee(int numCups) {
-        this.numCups = numCups;
+    public Coffee() {
+
+    }
+
+    public Coffee(int amountWater, int amountMilk, int amountBean) {
+        this.amountWater = amountWater;
+        this.amountMilk= amountMilk;
+        this.amountBean = amountBean;
     }
 
     public int getNumCups() {
         return this.numCups;
+    }
+
+    public void setNumCups(int numCups) {
+        this.numCups = numCups;
     }
 
     public void printIngredients() {

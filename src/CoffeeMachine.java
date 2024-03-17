@@ -5,18 +5,19 @@ public class CoffeeMachine {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Coffee coffee = new Coffee(getNumCups());
+        Coffee coffee = machineConfig();
+        coffee.setNumCups(numCups());
         coffee.printIngredients();
     }
 
-    public static int getNumCups() {
+    public static int numCups() {
         String s = "Write how many cups of coffee you will need:";
         System.out.println(s);
 
         int numCups = 0;
         while (true) {
             try {
-                numCups = Integer.parseInt(scanner.nextLine());
+                numCups = Integer.parseInt(scanner.next());
             } catch (Exception e) {
                 System.out.println("ERROR: Please enter a number");
                 continue;
@@ -34,15 +35,19 @@ public class CoffeeMachine {
 
         return numCups;
     }
-    public static void coffeeProcess() {
-        String s = """
-                Starting to make a coffee
-                Grinding coffee beans
-                Boiling water
-                Mixing boiled water with crushed coffee beans
-                Pouring coffee into the cup
-                Pouring some milk into the cup
-                Coffee is ready!""";
-        System.out.println(s);
+
+    public static Coffee machineConfig() {
+        int amountWater;
+        int amountMilk;
+        int amountBean;
+
+        System.out.println("Write how many ml of water the coffee machine has:");
+        amountWater = scanner.nextInt();
+        System.out.println("Write how many ml of milk the coffee machine has:");
+        amountMilk = scanner.nextInt();
+        System.out.println("Write how many grams of coffee beans the coffee machine has:");
+        amountBean = scanner.nextInt();
+
+        return new Coffee(amountWater, amountMilk, amountBean);
     }
 }

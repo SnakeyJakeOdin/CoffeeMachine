@@ -9,5 +9,8 @@ public class CoffeeMachine {
                 Pouring some milk into the cup
                 Coffee is ready!""";
         System.out.println(coffeeProcess);
+
+        Coffee coffee = new Coffee(5);
+        coffee.printIngredients();
     }
 }

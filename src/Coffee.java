@@ -14,8 +14,9 @@ public class Coffee {
         int milkPerCup = 50;   // ml
         int beansPerCup = 15;  // g
 
-        System.out.printf("%d ml of water%n", waterPerCup);
-        System.out.printf("%d ml of milk%n", milkPerCup);
-        System.out.printf("%d g of coffee beans%n", beansPerCup);
+        System.out.printf("For %d cups of coffee you will need:%n", numCups);
+        System.out.printf("%d ml of water%n", waterPerCup * numCups);
+        System.out.printf("%d ml of milk%n", milkPerCup * numCups);
+        System.out.printf("%d g of coffee beans%n", beansPerCup * numCups);
     }
 }

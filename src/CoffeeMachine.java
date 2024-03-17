@@ -1,6 +1,13 @@
 public class CoffeeMachine {
     public static void main(String[] args) {
-        String coffeeProcess = """
+        // Create Coffee object
+        Coffee coffee = new Coffee(5);
+
+        coffee.printIngredients();
+    }
+
+    public static void coffeeProcess() {
+        String s = """
                 Starting to make a coffee
                 Grinding coffee beans
                 Boiling water
@@ -8,9 +15,6 @@ public class CoffeeMachine {
                 Pouring coffee into the cup
                 Pouring some milk into the cup
                 Coffee is ready!""";
-        System.out.println(coffeeProcess);
-
-        Coffee coffee = new Coffee(5);
-        coffee.printIngredients();
+        System.out.println(s);
     }
 }

@@ -7,14 +7,14 @@ public class CoffeeMachine {
     public static void main(String[] args) {
         Coffee coffee = machineConfig();
         coffee.setNumCups(numCups());
-        coffee.checkSupplies();
+        coffee.printAvailability(coffee.checkSupplies());
     }
 
     public static int numCups() {
         String s = "Write how many cups of coffee you will need:";
         System.out.println(s);
 
-        int numCups = 0;
+        int numCups;
         while (true) {
             try {
                 numCups = Integer.parseInt(scanner.next());
@@ -25,12 +25,7 @@ public class CoffeeMachine {
             if (numCups < 0) {
                 System.out.println("ERROR: Number cannot be negative");
             }
-            else if (numCups == 0) {
-                System.out.println("ERROR: Number cannot be 0");
-            }
-            else {
-                break;
-            }
+            else break;
         }
 
         return numCups;

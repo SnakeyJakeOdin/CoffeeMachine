@@ -7,7 +7,7 @@ public class CoffeeMachine {
     public static void main(String[] args) {
         Coffee coffee = machineConfig();
         coffee.setNumCups(numCups());
-        coffee.printIngredients();
+        coffee.checkSupplies();
     }
 
     public static int numCups() {

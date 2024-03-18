@@ -5,9 +5,10 @@ public class CoffeeMachine {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Coffee coffee = machineConfig();
-        coffee.setNumCups(numCups());
-        coffee.printAvailability(coffee.checkSupplies());
+        // Create coffee machine
+        Machine coffeeMachine = new Machine(400, 540, 120,
+                9, 550);
+        System.out.println(coffeeMachine.toString());
     }
 
     public static int numCups() {
@@ -35,6 +36,7 @@ public class CoffeeMachine {
         int amountWater;
         int amountMilk;
         int amountBean;
+        int amountCups;
 
         System.out.println("Write how many ml of water the coffee machine has:");
         amountWater = scanner.nextInt();
@@ -42,6 +44,8 @@ public class CoffeeMachine {
         amountMilk = scanner.nextInt();
         System.out.println("Write how many grams of coffee beans the coffee machine has:");
         amountBean = scanner.nextInt();
+        System.out.println("Write how many disposable cups you want to add");
+        amountCups = scanner.nextInt();
 
         return new Coffee(amountWater, amountMilk, amountBean);
     }

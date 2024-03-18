@@ -13,6 +13,23 @@ public class Coffee {
     public void setNumCups(int numCups) {
         this.numCups = numCups;
     }
+    public void setAmountWater(int amountWater) {
+        this.amountWater = amountWater;
+    }
+    public void setAmountMilk(int amountMilk) {
+        this.amountMilk = amountMilk;
+    }
+    public void setAmountBean(int amountBean) {
+        this.amountBean = amountBean;
+    }
+    public String toString() {
+        String s = String.format("""
+                Water: %d ml
+                Milk: %d ml
+                Beans: %d g
+                """, amountWater, amountMilk, amountBean);
+        return s;
+    }
 
     public int checkSupplies() {
         final int waterPerCup = 200; // ml

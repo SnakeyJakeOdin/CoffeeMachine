@@ -6,9 +6,15 @@ public class CoffeeMachine {
 
     public static void main(String[] args) {
         // Create coffee machine
-        Machine coffeeMachine = new Machine(400, 540, 120,
-                9, 550);
+        Machine coffeeMachine = new Machine(400, 540, 120, 0, 9, 550);
+        Beverage espresso =     new Beverage(250, 0, 16, 4);
+        Beverage latte =        new Beverage(350, 75, 20, 7);
+        Beverage cappuccino =   new Beverage(200, 100, 12, 6);
+
         System.out.println(coffeeMachine.toString());
+        System.out.println(espresso.toString());
+        System.out.println(latte.toString());
+        System.out.println(cappuccino.toString());
 
         // Menu
         String s;

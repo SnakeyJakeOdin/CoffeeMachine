@@ -5,37 +5,55 @@ public class CoffeeMachine {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Create coffee machine
-        Machine coffeeMachine = new Machine(400, 540, 120, 0, 9, 550);
+        // Create coffee machine and beverages
+        Machine coffeeMachine = new Machine(400, 540, 120, 9, 550);
         Beverage espresso =     new Beverage(250, 0, 16, 4);
         Beverage latte =        new Beverage(350, 75, 20, 7);
         Beverage cappuccino =   new Beverage(200, 100, 12, 6);
 
-        System.out.println(coffeeMachine.toString());
-        System.out.println(espresso.toString());
-        System.out.println(latte.toString());
-        System.out.println(cappuccino.toString());
-
         // Menu
         String s;
-        while (true) {
-            s = scanner.nextLine();
-            if (s.equals("buy")) {
-                //TODO: implement buying logic
-                System.out.println("BUY");
-            }
-            else if (s.equals("fill")) {
-                //TODO: implement filling logic
-                System.out.println("FILL");
-            }
-            else if (s.equals("take")) {
-                //TODO: implement take logic
-                System.out.println("TAKE");
-            }
-            else {
-                break;
+        int n;
+
+        System.out.println(coffeeMachine.toString());
+        System.out.println("\nWrite action (buy, fill, take):");
+        s = scanner.nextLine();
+
+        if (s.equals("buy")) {
+            System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
+            n = scanner.nextInt();
+            switch (n) {
+                case 1:
+                    coffeeMachine.setWater(coffeeMachine.getWater() - espresso.getWater());
+                    coffeeMachine.setMilk(coffeeMachine.getMilk() - espresso.getMilk());
+                    coffeeMachine.setBeans(coffeeMachine.getBeans() - espresso.getBeans());
+                    System.out.println();
+                    break;
+                case 2:
+                    coffeeMachine.setWater(coffeeMachine.getWater() - latte.getWater());
+                    coffeeMachine.setMilk(coffeeMachine.getMilk() - latte.getMilk());
+                    coffeeMachine.setBeans(coffeeMachine.getBeans() - latte.getBeans());
+                    System.out.println();
+                    break;
+                case 3:
+                    coffeeMachine.setWater(coffeeMachine.getWater() - cappuccino.getWater());
+                    coffeeMachine.setMilk(coffeeMachine.getMilk() - cappuccino.getMilk());
+                    coffeeMachine.setBeans(coffeeMachine.getBeans() - cappuccino.getBeans());
+                    System.out.println();
+                    break;
+                default:
+                    break;
             }
         }
+        else if (s.equals("fill")) {
+            //TODO: implement filling logic
+            System.out.println("FILL");
+        }
+        else if (s.equals("take")) {
+            //TODO: implement take logic
+            System.out.println("TAKE");
+        }
+        System.out.println(coffeeMachine.toString());
     }
 
     public static int numCups() {

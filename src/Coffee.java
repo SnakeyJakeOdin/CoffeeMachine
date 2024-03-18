@@ -1,7 +1,7 @@
 public class Coffee {
-    public int water;
-    public int milk;
-    public int beans;
+    public int water; // ml
+    public int milk;  // ml
+    public int beans; // g
 
     public Coffee(int water, int milk, int beans) {
         this.water = water;
@@ -11,9 +11,9 @@ public class Coffee {
 
     public String toString() {
         String s = String.format("""
-                Water: %d ml
-                Milk: %d ml
-                Beans: %d g
+                %d ml of water
+                %d ml of milk
+                %d g of coffee beans
                 """, water, milk, beans);
         return s;
     }
@@ -25,5 +25,14 @@ public class Coffee {
     }
     public void setBeans(int beans) {
         this.beans = beans;
+    }
+    public int getWater() {
+        return this.water;
+    }
+    public int getMilk() {
+        return this.milk;
+    }
+    public int getBeans() {
+        return this.beans;
     }
 }

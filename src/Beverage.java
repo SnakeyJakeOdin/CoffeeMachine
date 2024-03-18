@@ -1,6 +1,6 @@
 public class Beverage extends Coffee {
     private int numCups;
-    public int cost;
+    public int cost;  // dollars
 
     public Beverage(int water, int milk, int beans, int cost) {
         super(water, milk, beans);
@@ -9,6 +9,9 @@ public class Beverage extends Coffee {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+    public int getCost() {
+        return cost;
     }
 
     public String toString() {

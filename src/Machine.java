@@ -1,8 +1,8 @@
 public class Machine extends Coffee{
 
-    private int cups;
-    private int money;
-    public Machine(int water, int milk, int beans, int cost, int cups, int money) {
+    private int cups;  // unit
+    private int money; // dollars
+    public Machine(int water, int milk, int beans, int cups, int money) {
         super(water, milk, beans);
         this.cups = cups;
         this.money = money;
@@ -14,12 +14,18 @@ public class Machine extends Coffee{
     public void setMoney(int money) {
         this.money = money;
     }
+    public int getCups() {
+        return this.cups;
+    }
+    public int getMoney() {
+        return this.money;
+    }
     public String toString() {
-        String s = String.format("""
-                Cups: %d
-                Money: $%d
-                """, cups, money);
-        return super.toString() + s;
+        String begin = String.format("The coffee machine has:%n");
+        String end = String.format("""
+                %d disposable cups
+                $%d of money""", cups, money);
+        return begin + super.toString() + end;
     }
 
 }

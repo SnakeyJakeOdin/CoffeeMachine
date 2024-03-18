@@ -1,33 +1,33 @@
 public class Coffee {
     private int numCups;
-    public int amountWater;
-    public int amountMilk;
-    public int amountBean;
+    public int water;
+    public int milk;
+    public int beans;
 
-    public Coffee(int amountWater, int amountMilk, int amountBean) {
-        this.amountWater = amountWater;
-        this.amountMilk= amountMilk;
-        this.amountBean = amountBean;
+    public Coffee(int water, int milk, int beans) {
+        this.water = water;
+        this.milk = milk;
+        this.beans = beans;
     }
 
     public void setNumCups(int numCups) {
         this.numCups = numCups;
     }
-    public void setAmountWater(int amountWater) {
-        this.amountWater = amountWater;
+    public void setWater(int water) {
+        this.water = water;
     }
-    public void setAmountMilk(int amountMilk) {
-        this.amountMilk = amountMilk;
+    public void setMilk(int milk) {
+        this.milk = milk;
     }
-    public void setAmountBean(int amountBean) {
-        this.amountBean = amountBean;
+    public void setBeans(int beans) {
+        this.beans = beans;
     }
     public String toString() {
         String s = String.format("""
                 Water: %d ml
                 Milk: %d ml
                 Beans: %d g
-                """, amountWater, amountMilk, amountBean);
+                """, water, milk, beans);
         return s;
     }
 
@@ -36,9 +36,9 @@ public class Coffee {
         final int milkPerCup = 50;   // ml
         final int beansPerCup = 15;  // g
 
-        int waterRatio = amountWater / waterPerCup;
-        int milkRatio = amountMilk / milkPerCup;
-        int beanRatio = amountBean / beansPerCup;
+        int waterRatio = water / waterPerCup;
+        int milkRatio = milk / milkPerCup;
+        int beanRatio = beans / beansPerCup;
 
         // water limiting factor
         int limitingFactor;

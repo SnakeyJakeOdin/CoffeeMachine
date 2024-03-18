@@ -1,23 +1,23 @@
 public class Machine extends Coffee{
 
-    private int amountCups;
-    private int amountMoney;
-    public Machine(int amountWater, int amountMilk, int amountBean, int amountCups, int amountMoney) {
-        super(amountWater, amountMilk, amountBean);
-        this.amountCups = amountCups;
-        this.amountMoney = amountMoney;
+    private int cups;
+    private int money;
+    public Machine(int water, int milk, int beans, int cups, int money) {
+        super(water, milk, beans);
+        this.cups = cups;
+        this.money = money;
     }
 
-    public void setAmountCups(int amountCups) {
-        this.amountCups = amountCups;
+    public void setCups(int cups) {
+        this.cups = cups;
     }
-    public void setAmountMoney(int amountMoney) {
-        this.amountMoney = amountMoney;
+    public void setMoney(int money) {
+        this.money = money;
     }
     public String toString() {
         String s = String.format("""
                 Cups: %d
-                Money: $%d""", amountCups, amountMoney);
+                Money: $%d""", cups, money);
         return super.toString() + s;
     }
 

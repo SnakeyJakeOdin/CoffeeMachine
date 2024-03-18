@@ -9,14 +9,6 @@ public class Coffee {
         this.beans = beans;
     }
 
-    public String toString() {
-        String s = String.format("""
-                %d ml of water
-                %d ml of milk
-                %d g of coffee beans
-                """, water, milk, beans);
-        return s;
-    }
     public void setWater(int water) {
         this.water = water;
     }
@@ -26,6 +18,7 @@ public class Coffee {
     public void setBeans(int beans) {
         this.beans = beans;
     }
+
     public int getWater() {
         return this.water;
     }
@@ -34,5 +27,14 @@ public class Coffee {
     }
     public int getBeans() {
         return this.beans;
+    }
+
+    public String toString() {
+        String s = String.format("""
+                %d ml of water
+                %d ml of milk
+                %d g of coffee beans
+                """, water, milk, beans);
+        return s;
     }
 }

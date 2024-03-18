@@ -46,8 +46,15 @@ public class CoffeeMachine {
             }
         }
         else if (s.equals("fill")) {
-            //TODO: implement filling logic
-            System.out.println("FILL");
+            System.out.println("Write how many ml of water you want to add:");
+            coffeeMachine.setWater(coffeeMachine.getWater() + scanner.nextInt());
+            System.out.println("Write how many ml of milk you want to add:");
+            coffeeMachine.setMilk(coffeeMachine.getMilk() + scanner.nextInt());
+            System.out.println("Write how many grams of coffee beans you want to add:");
+            coffeeMachine.setBeans(coffeeMachine.getBeans() + scanner.nextInt());
+            System.out.println("Write how many disposable cups you want to add:");
+            coffeeMachine.setCups(coffeeMachine.getCups() + scanner.nextInt());
+            System.out.println();
         }
         else if (s.equals("take")) {
             //TODO: implement take logic

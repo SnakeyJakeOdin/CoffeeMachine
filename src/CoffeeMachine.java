@@ -9,6 +9,27 @@ public class CoffeeMachine {
         Machine coffeeMachine = new Machine(400, 540, 120,
                 9, 550);
         System.out.println(coffeeMachine.toString());
+
+        // Menu
+        String s;
+        while (true) {
+            s = scanner.nextLine();
+            if (s.equals("buy")) {
+                //TODO: implement buying logic
+                System.out.println("BUY");
+            }
+            else if (s.equals("fill")) {
+                //TODO: implement filling logic
+                System.out.println("FILL");
+            }
+            else if (s.equals("take")) {
+                //TODO: implement take logic
+                System.out.println("TAKE");
+            }
+            else {
+                break;
+            }
+        }
     }
 
     public static int numCups() {

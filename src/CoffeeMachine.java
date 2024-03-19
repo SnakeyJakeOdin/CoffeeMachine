@@ -24,28 +24,13 @@ public class CoffeeMachine {
             n = scanner.nextInt();
             switch (n) {
                 case 1:
-                    coffeeMachine.setWater(coffeeMachine.getWater() - espresso.getWater());
-                    coffeeMachine.setMilk(coffeeMachine.getMilk() - espresso.getMilk());
-                    coffeeMachine.setBeans(coffeeMachine.getBeans() - espresso.getBeans());
-                    coffeeMachine.setCups(coffeeMachine.getCups() - 1);
-                    coffeeMachine.setMoney(coffeeMachine.getMoney() + espresso.getCost());
-                    System.out.println();
+                    updateMachine(coffeeMachine, espresso);
                     break;
                 case 2:
-                    coffeeMachine.setWater(coffeeMachine.getWater() - latte.getWater());
-                    coffeeMachine.setMilk(coffeeMachine.getMilk() - latte.getMilk());
-                    coffeeMachine.setBeans(coffeeMachine.getBeans() - latte.getBeans());
-                    coffeeMachine.setCups(coffeeMachine.getCups() - 1);
-                    coffeeMachine.setMoney(coffeeMachine.getMoney() + latte.getCost());
-                    System.out.println();
+                    updateMachine(coffeeMachine, latte);
                     break;
                 case 3:
-                    coffeeMachine.setWater(coffeeMachine.getWater() - cappuccino.getWater());
-                    coffeeMachine.setMilk(coffeeMachine.getMilk() - cappuccino.getMilk());
-                    coffeeMachine.setBeans(coffeeMachine.getBeans() - cappuccino.getBeans());
-                    coffeeMachine.setCups(coffeeMachine.getCups() - 1);
-                    coffeeMachine.setMoney(coffeeMachine.getMoney() + cappuccino.getCost());
-                    System.out.println();
+                    updateMachine(coffeeMachine, cappuccino);
                     break;
                 default:
                     break;
@@ -68,5 +53,14 @@ public class CoffeeMachine {
         }
 
         System.out.println(coffeeMachine);
+    }
+
+    public static void updateMachine(Machine coffeeMachine, Beverage beverage) {
+        coffeeMachine.setWater(coffeeMachine.getWater() - beverage.getWater());
+        coffeeMachine.setMilk(coffeeMachine.getMilk() - beverage.getMilk());
+        coffeeMachine.setBeans(coffeeMachine.getBeans() - beverage.getBeans());
+        coffeeMachine.setCups(coffeeMachine.getCups() - 1);
+        coffeeMachine.setMoney(coffeeMachine.getMoney() + beverage.getCost());
+        System.out.println();
     }
 }

@@ -27,7 +27,8 @@ public class Machine extends Coffee{
         String begin = String.format("The coffee machine has:%n");
         String end = String.format("""
                 %d disposable cups
-                $%d of money""", cups, money);
+                $%d of money
+                """, cups, money);
         return begin + super.toString() + end;
     }
 }

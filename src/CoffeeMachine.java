@@ -84,23 +84,6 @@ public class CoffeeMachine {
         System.out.println();
     }
 
-    public static void fillMachine(Machine coffeeMachine) {
-        System.out.println("Write how many ml of water you want to add:");
-        coffeeMachine.setWater(coffeeMachine.getWater() + scanner.nextInt());
-        System.out.println("Write how many ml of milk you want to add:");
-        coffeeMachine.setMilk(coffeeMachine.getMilk() + scanner.nextInt());
-        System.out.println("Write how many grams of coffee beans you want to add:");
-        coffeeMachine.setBeans(coffeeMachine.getBeans() + scanner.nextInt());
-        System.out.println("Write how many disposable cups you want to add:");
-        coffeeMachine.setCups(coffeeMachine.getCups() + scanner.nextInt());
-        System.out.println();
-    }
-
-    public static void takeMoney(Machine coffeeMachine) {
-        System.out.printf("I gave you $%d%n%n", coffeeMachine.getMoney());
-        coffeeMachine.setMoney(0);
-    }
-
     public static int checkResources(Machine coffeeMachine, Beverage beverage) {
         if (coffeeMachine.getWater() - beverage.getWater() < 0) {
             return 0;
@@ -117,5 +100,22 @@ public class CoffeeMachine {
         else {
             return 4;
         }
+    }
+
+    public static void fillMachine(Machine coffeeMachine) {
+        System.out.println("Write how many ml of water you want to add:");
+        coffeeMachine.setWater(coffeeMachine.getWater() + scanner.nextInt());
+        System.out.println("Write how many ml of milk you want to add:");
+        coffeeMachine.setMilk(coffeeMachine.getMilk() + scanner.nextInt());
+        System.out.println("Write how many grams of coffee beans you want to add:");
+        coffeeMachine.setBeans(coffeeMachine.getBeans() + scanner.nextInt());
+        System.out.println("Write how many disposable cups you want to add:");
+        coffeeMachine.setCups(coffeeMachine.getCups() + scanner.nextInt());
+        System.out.println();
+    }
+
+    public static void takeMoney(Machine coffeeMachine) {
+        System.out.printf("I gave you $%d%n%n", coffeeMachine.getMoney());
+        coffeeMachine.setMoney(0);
     }
 }

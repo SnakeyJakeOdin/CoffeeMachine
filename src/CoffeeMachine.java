@@ -12,12 +12,9 @@ public class CoffeeMachine {
         Beverage cappuccino =   new Beverage(200, 100, 12, 6);
 
         // Menu
-        String s;
-        int n;
-
         System.out.println(coffeeMachine);
         System.out.println("\nWrite action (buy, fill, take):");
-        s = scanner.nextLine();
+        String s = scanner.nextLine();
 
         if ("buy".equals(s)) {
             buyCoffee(coffeeMachine, espresso, latte, cappuccino);
@@ -26,8 +23,7 @@ public class CoffeeMachine {
             fillMachine(coffeeMachine);
         }
         else if ("take".equals(s)) {
-            System.out.printf("I gave you $%d%n%n", coffeeMachine.getMoney());
-            coffeeMachine.setMoney(0);
+            takeMoney(coffeeMachine);
         }
 
         System.out.println(coffeeMachine);
@@ -70,5 +66,10 @@ public class CoffeeMachine {
         System.out.println("Write how many disposable cups you want to add:");
         coffeeMachine.setCups(coffeeMachine.getCups() + scanner.nextInt());
         System.out.println();
+    }
+
+    public static void takeMoney(Machine coffeeMachine) {
+        System.out.printf("I gave you $%d%n%n", coffeeMachine.getMoney());
+        coffeeMachine.setMoney(0);
     }
 }
